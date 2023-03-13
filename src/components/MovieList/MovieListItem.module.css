@@ -1,0 +1,11 @@
+.movie-list-item {
+    display: "flex";
+    background-color: white;
+    padding: 1rem;
+    width: 15%;
+    text-align: center;
+}
+
+.movie-list-item img {
+    width: 100%;
+}
