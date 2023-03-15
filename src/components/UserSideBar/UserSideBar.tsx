@@ -33,16 +33,15 @@ const UserSideBar: React.FC = () => {
 
   return (
     <>
+      <label htmlFor="toggle-nav" className={classes["hide-nav"]}>
+        <Button sx={{ color: grey[900], pointerEvents: "none" }}>
+          <CloseIcon />
+        </Button>
+      </label>
       {!loading && (
         <>
           {user && (
             <>
-              <label htmlFor="toggle-nav" className={classes["hide-nav"]}>
-                <Button sx={{ color: grey[900], pointerEvents: "none" }}>
-                  <CloseIcon />
-                </Button>
-              </label>
-
               <UserInfo user={user} />
               <div className={classes.centered}>
                 <Button onClick={signOutHandler} variant="contained">
