@@ -1,0 +1,56 @@
+.group {
+  animation: fade-in 2s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.background-image {
+  filter: blur(2px);
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  background-size: cover;
+  width: 100%;
+  height: 50.2rem;
+}
+
+.details {
+  position: absolute;
+  z-index: 1;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  opacity: 0.9;
+  background-color: white;
+  width: 50%;
+  margin-top: 2%;
+  margin-left: 13%;
+  height: 40rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow: auto;
+}
+
+.details table {
+  width: 100%;
+}
+
+.details .group {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.details button {
+  cursor: pointer;
+}
+
+.poster {
+  width: 20%;
+  min-width: 10rem;
+  border-radius: 0.5rem;
+}

@@ -1,0 +1,66 @@
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20%;
+}
+
+.retry-button {
+  margin-top: 1rem;
+  width: 13rem;
+}
+
+.card-group {
+  display: flex;
+}
+
+.left-side {
+  width: 70%;
+}
+
+.right-side {
+  width: 30%;
+  height: 45rem;
+}
+
+@media (max-width: 1500px) {
+  .left-side {
+    width: 100%;
+  }
+
+  .card-group {
+    flex-direction: row-reverse;
+  }
+
+  .right-side {
+    border-radius: 0.5rem;
+    position: absolute;
+    z-index: 1;
+    width: 40%;
+    background-color: white;
+  }
+
+  .hide {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .right-side {
+    width: 75%;
+  }
+}
+
+.main {
+  animation: fade-in 3s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

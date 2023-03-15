@@ -1,22 +1,41 @@
+.table {
+  width: 100%;
+}
+
 .navigation {
-    display: "flex";
-    padding-left: 2rem;
+  display: "flex";
+  padding-left: 2rem;
 }
 
 .navigation h1 {
-    font-family: Bahnschrift;
-    color: red;
-    display: inline-block;
+  font-family: Bahnschrift;
+  color: red;
+}
+
+.navigation header {
+  display: inline-block;
 }
 
 .navigation ul {
-    display: inline-block;
-    list-style: none;
+  display: inline-block;
+  list-style: none;
 }
 
 .navigation li {
-    color: gray;
-    font-family: Calibri;
-    display: inline-block;
-    padding: 1rem;
+  padding: 1rem 1rem 0 1rem;
+  display: inline-block;
+}
+
+.navigation li a {
+  text-decoration: none;
+  color: gray;
+  font-family: Calibri;
+}
+
+.navigation a:hover {
+  color: lightgray;
+}
+
+.navigation a:active {
+  color: skyblue;
 }

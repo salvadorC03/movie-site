@@ -1,0 +1,9 @@
+.show-list-item {
+    cursor: pointer;
+}
+
+.show-list-item img {
+  width: 100%;
+  border-radius: 0.5rem;
+  aspect-ratio: 4 / 3;
+}
