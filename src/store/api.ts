@@ -28,7 +28,7 @@ export async function fetchMovies() {
         backdrop_url: `${image_url}${movie.backdrop_path}`,
         release_date: movie.release_date,
         description: movie.overview,
-        popularity: movie.vote_average,
+        popularity: movie.vote_average.toFixed(1),
       };
     })
   );
@@ -56,7 +56,7 @@ export async function fetchShows() {
         backdrop_url: `${image_url}${show.backdrop_path}`,
         first_air_date: show.first_air_date,
         description: show.overview,
-        popularity: show.vote_average,
+        popularity: show.vote_average.toFixed(1),
       };
     })
   );

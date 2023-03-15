@@ -33,20 +33,21 @@
   }
 
   .right-side {
+    display: none;
+  }
+
+  .toggle-nav:checked + .right-side {
+    display: block;
     border-radius: 0.5rem;
     position: absolute;
     z-index: 1;
     width: 40%;
     background-color: white;
   }
-
-  .hide {
-    display: none;
-  }
 }
 
 @media (max-width: 1024px) {
-  .right-side {
+  .toggle-nav:checked + .right-side {
     width: 75%;
   }
 }
@@ -63,4 +64,8 @@
   to {
     opacity: 1;
   }
+}
+
+.toggle-nav {
+  display: none;
 }

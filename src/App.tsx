@@ -20,7 +20,6 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
   const [selectedShow, setSelectedShow] = useState<Show | null>(null);
-  const [displayNav, setDisplayNav] = useState(false);
 
   function selectMovieHandler(movie: Movie) {
     setSelectedMovie(movie);
@@ -64,7 +63,7 @@ function App() {
         <main className={classes.main}>
           {selectedMovie ? (
             <>
-              <Navigation onShowNav={() => {}} />
+              <Navigation />
               <MovieDetails
                 movie={selectedMovie}
                 onClose={closeMovieDetailsHandler}
@@ -72,7 +71,7 @@ function App() {
             </>
           ) : selectedShow ? (
             <>
-              <Navigation onShowNav={() => {}} />
+              <Navigation />
               <ShowDetails
                 show={selectedShow}
                 onClose={closeShowDetailsHandler}
@@ -81,9 +80,7 @@ function App() {
           ) : (
             <div className={classes["card-group"]}>
               <div className={classes["left-side"]}>
-                <Navigation
-                  onShowNav={() => setDisplayNav((prevState) => !prevState)}
-                />
+                <Navigation />
                 {showsList && (
                   <ShowList list={showsList} onSelect={selectShowHandler} />
                 )}
@@ -91,16 +88,13 @@ function App() {
                   <MovieList list={moviesList} onSelect={selectMovieHandler} />
                 )}
               </div>
-              <div
-                className={`${classes["right-side"]} ${
-                  !displayNav && classes.hide
-                }`}
-              >
-                <UserSideBar
-                  onHideNav={() => {
-                    setDisplayNav((prevState) => !prevState);
-                  }}
-                />
+              <input
+                type="checkbox"
+                id="toggle-nav"
+                className={classes["toggle-nav"]}
+              />
+              <div className={`${classes["right-side"]}`}>
+                <UserSideBar />
               </div>
             </div>
           )}

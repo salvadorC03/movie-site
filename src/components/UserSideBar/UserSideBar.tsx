@@ -6,8 +6,10 @@ import Button from "@mui/material/Button/Button";
 import GoogleButton from "react-google-button";
 import classes from "./UserSideBar.module.css";
 import { CircularProgress } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+import { grey } from "@mui/material/colors";
 
-const UserSideBar: React.FC<{ onHideNav: () => void }> = (props) => {
+const UserSideBar: React.FC = () => {
   const user = userState();
   const [loading, setLoading] = useState(false);
 
@@ -35,7 +37,12 @@ const UserSideBar: React.FC<{ onHideNav: () => void }> = (props) => {
         <>
           {user && (
             <>
-              <button onClick={props.onHideNav}>hai</button>
+              <label htmlFor="toggle-nav" className={classes["hide-nav"]}>
+                <Button sx={{ color: grey[900], pointerEvents: "none" }}>
+                  <CloseIcon />
+                </Button>
+              </label>
+
               <UserInfo user={user} />
               <div className={classes.centered}>
                 <Button onClick={signOutHandler} variant="contained">

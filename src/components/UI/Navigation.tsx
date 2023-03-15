@@ -3,7 +3,7 @@ import classes from "./Navigation.module.css";
 import MenuIcon from "@mui/icons-material/Menu";
 import { grey } from "@mui/material/colors";
 
-const Navigation: React.FC<{ onShowNav: () => void }> = (props) => {
+const Navigation: React.FC = () => {
   return (
     <table className={classes.table}>
       <tbody>
@@ -27,9 +27,11 @@ const Navigation: React.FC<{ onShowNav: () => void }> = (props) => {
             </nav>
           </td>
           <td align="right" className={classes["show-nav"]}>
-            <Button onClick={props.onShowNav} sx={{ color: grey[900] }}>
-              <MenuIcon />
-            </Button>
+            <label htmlFor="toggle-nav">
+              <Button sx={{ color: grey[900], pointerEvents: "none" }}>
+                <MenuIcon />
+              </Button>
+            </label>
           </td>
         </tr>
       </tbody>
