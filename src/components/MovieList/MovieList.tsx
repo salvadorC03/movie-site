@@ -8,11 +8,18 @@ const MovieList: React.FC<{
   onSelect: (movie: Movie) => void;
 }> = React.memo((props) => {
   return (
-    <ul className={classes["movie-list"]}>
-      {props.list.map((movie) => (
-        <MovieListItem key={movie.id} movie={movie} onSelect={props.onSelect} />
-      ))}
-    </ul>
+    <div className={classes.group}>
+      <h2 style={{ paddingLeft: "1.5rem" }}>Trending movies:</h2>
+      <ul className={classes["movie-list"]}>
+        {props.list.map((movie) => (
+          <MovieListItem
+            key={movie.id}
+            movie={movie}
+            onSelect={props.onSelect}
+          />
+        ))}
+      </ul>
+    </div>
   );
 });
 

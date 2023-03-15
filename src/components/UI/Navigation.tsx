@@ -26,7 +26,7 @@ const Navigation: React.FC<{ onShowNav: () => void }> = (props) => {
               </ul>
             </nav>
           </td>
-          <td align="right">
+          <td align="right" className={classes["show-nav"]}>
             <Button onClick={props.onShowNav} sx={{ color: grey[900] }}>
               <MenuIcon />
             </Button>

@@ -7,13 +7,13 @@ import GoogleButton from "react-google-button";
 import classes from "./UserSideBar.module.css";
 import { CircularProgress } from "@mui/material";
 
-const UserSideBar: React.FC = () => {
+const UserSideBar: React.FC<{ onHideNav: () => void }> = (props) => {
   const user = userState();
   const [loading, setLoading] = useState(false);
 
   async function googleSignInHandler() {
     try {
-      const data = await signInWithPopup(auth, googleProvider);
+      await signInWithPopup(auth, googleProvider);
       setLoading(true);
       setTimeout(() => setLoading(false), 1000);
     } catch (error) {
@@ -35,6 +35,7 @@ const UserSideBar: React.FC = () => {
         <>
           {user && (
             <>
+              <button onClick={props.onHideNav}>hai</button>
               <UserInfo user={user} />
               <div className={classes.centered}>
                 <Button onClick={signOutHandler} variant="contained">

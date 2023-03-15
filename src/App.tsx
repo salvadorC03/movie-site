@@ -20,7 +20,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
   const [selectedShow, setSelectedShow] = useState<Show | null>(null);
-  const [displayNav, setDisplayNav] = useState(true);
+  const [displayNav, setDisplayNav] = useState(false);
 
   function selectMovieHandler(movie: Movie) {
     setSelectedMovie(movie);
@@ -85,19 +85,10 @@ function App() {
                   onShowNav={() => setDisplayNav((prevState) => !prevState)}
                 />
                 {showsList && (
-                  <>
-                    <h2 style={{ paddingLeft: "1.5rem" }}>Trending shows:</h2>
-                    <ShowList list={showsList} onSelect={selectShowHandler} />
-                  </>
+                  <ShowList list={showsList} onSelect={selectShowHandler} />
                 )}
                 {moviesList && (
-                  <>
-                    <h2 style={{ paddingLeft: "1.5rem" }}>Trending movies:</h2>
-                    <MovieList
-                      list={moviesList}
-                      onSelect={selectMovieHandler}
-                    />
-                  </>
+                  <MovieList list={moviesList} onSelect={selectMovieHandler} />
                 )}
               </div>
               <div
@@ -105,7 +96,11 @@ function App() {
                   !displayNav && classes.hide
                 }`}
               >
-                <UserSideBar />
+                <UserSideBar
+                  onHideNav={() => {
+                    setDisplayNav((prevState) => !prevState);
+                  }}
+                />
               </div>
             </div>
           )}

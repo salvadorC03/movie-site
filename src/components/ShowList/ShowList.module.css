@@ -1,19 +1,46 @@
 .show-list {
-    list-style: none;
-    margin-right: 1rem;
-    display: grid;
-    grid-auto-flow: column;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    grid-auto-columns: 20rem;
-    grid-template-rows: min-content;
-    gap: 1rem;
-    padding-bottom: 1rem;
-    scroll-snap-type: inline mandatory;
-    scroll-padding-inline: 1rem;
+  list-style: none;
+  margin-right: 1rem;
+  display: grid;
+  grid-auto-flow: column;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  grid-auto-columns: 20rem;
+  grid-template-rows: min-content;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: 1rem;
+}
+
+.show-list > * {
+  scroll-snap-align: start;
+}
+
+@media (max-width: 768px) {
+  .group h2 {
+    font-size: 20px;
   }
-  
-  .show-list > * {
-    scroll-snap-align: start;
+
+  .group {
+    margin-top: 5%;
   }
-  
+
+  .show-list {
+    grid-auto-columns: 18rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .group {
+    margin-top: 10%;
+  }
+}
+
+
+
+@media (max-width: 300px) {
+  .group {
+    margin-top: 20%;
+  }
+}
